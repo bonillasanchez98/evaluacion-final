@@ -1,6 +1,6 @@
 package com.josebonilla.evaluacionfinal.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -12,7 +12,13 @@ import lombok.*;
 @Entity
 public class EnrollmentDetail {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
+    private Integer id;
+
     private Course course;
 
+    @Column(nullable = false)
     private String aula;
 }
