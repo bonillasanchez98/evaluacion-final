@@ -17,8 +17,14 @@ public class EnrollmentDetail {
     @EqualsAndHashCode.Include
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_course", nullable = false, foreignKey = @ForeignKey(name = "FK_ENROLLMENT_DETAIL_COURSE"))
     private Course course;
 
     @Column(nullable = false)
     private String aula;
+
+    @ManyToOne
+    @JoinColumn(name = "id_enrollment", nullable = false, foreignKey = @ForeignKey(name = "FK_ENROLLMENT_DETAIL_ENROLLMENT"))
+    private Enrollment enrollment;
 }
