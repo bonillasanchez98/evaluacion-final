@@ -1,12 +1,13 @@
 package com.josebonilla.evaluacionfinal.service;
 
+
 import java.util.List;
 
 public interface ICRUDOperations<T, ID> {
 
-    T save(T t) throws Exception;
-    T update(T t, ID id) throws Exception;
-    List<T> readAll() throws Exception;
-    T readById(ID id) throws Exception;
-    void delete(ID id) throws Exception;
+    T save(T t) ;
+    T update(T t, ID id);
+    List<T> readAll();
+    T readById(ID id);
+    void delete(ID id);
 }
